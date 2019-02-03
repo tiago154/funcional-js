@@ -2,10 +2,17 @@
   "name": "programacao_funcional_js",
   "version": "1.0.0",
   "description": "Pequeno projeto utilizando programação funcional com JS",
-  "main": "teste.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tiago Santos Da Silva",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
 }
