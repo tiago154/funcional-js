@@ -1,10 +1,5 @@
-const { buildMenu } = require('./menu/operations');
-const { mainMenu } = require('./menu');
+const { mainMenu, operationsMenu } = require('./menu');
 
-const init = () => mainMenu(buildMenu);
+const init = (buildMenu) => mainMenu(buildMenu);
 
-init();
-
-
-
-
+init(operationsMenu.buildMenu);

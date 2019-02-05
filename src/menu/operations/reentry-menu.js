@@ -1,11 +1,11 @@
-const readLineSync = require('readline-sync');
+const getInput = require('./get-input');
 
-module.exports = (operation, menuName) => {
+module.exports = (operation, menuName, type = 'Reentry') => {
     console.log(`Deseja Realizar uma nova pesquisa?\n`);
     console.log(`'s' - SIM\n'n' - NÃO\n`);
     console.log(`Operação: ${operation}`);
     console.log(`Menu: ${menuName}\n`);
-    optionUser = readLineSync.question('', { limit: ['s', 'n'], limitMessage: 'Digite [S/N]' });
+    optionUser = getInput(type);
     console.clear();
     return optionUser;
 }

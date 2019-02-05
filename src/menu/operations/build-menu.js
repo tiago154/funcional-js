@@ -1,11 +1,11 @@
-const readLineSync = require('readline-sync');
+const getInput = require('./get-input');
 
 const printMessage = (m) => console.log(m);
 
-module.exports = (messages) => {
+module.exports = (messages, type = 'Prompt') => {
     console.clear();
     messages.map(printMessage);
-    return readLineSync.prompt({ prompt: '=> ' });
+    return getInput(type);
 }
 
 

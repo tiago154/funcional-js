@@ -68,7 +68,9 @@ O código funcional é composto por pequenas funções que se combinam para reso
 
 - Compose e Currying
 
-  
+
+## Exemplos
+
 
 **Compose - Exemplo**
 

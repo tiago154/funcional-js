@@ -1,16 +1,16 @@
-const { countryMessages } = require('../messages');
-const { countryFilter } = require('../../filters');
+const { colorMessages } = require('../messages');
+const { colorFilter } = require('../../filters');
 const data = require('../../data/mock-data.json');
 const { getData, reentryMenu } = require('../operations');
 
 const countryMenu = (buildMenu) => {
-    const option = buildMenu(countryMessages);
+    const option = buildMenu(colorMessages);
 
     if (option === '0') return require('../index').filterMenu(buildMenu);
 
-    getData(countryFilter, data, option);
+    getData(colorFilter, data, option);
 
-    const reentryOption = reentryMenu('Filtro', 'País');
+    const reentryOption = reentryMenu('Filtro', 'Cor');
 
     if (reentryOption !== 's') require('../index').filterMenu(buildMenu);
 
