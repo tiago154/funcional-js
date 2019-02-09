@@ -14,6 +14,6 @@ const bandQuantityMenu = (returnMenu) => {
     if (reentryOption === 's') return bandQuantityMenu(returnMenu);
 
     return returnMenu();
-}
+};
 
-module.exports = { bandQuantityMenu }
+module.exports = { bandQuantityMenu };

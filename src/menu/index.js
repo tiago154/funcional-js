@@ -11,7 +11,7 @@ const mainMenu = () => {
     if (option === '0') return process.exit('\nDesligando...');
 
     return mainMenu();
-}
+};
 
 const filterMenu = () => {
     const option = buildMenu(messages.filterMessages);
@@ -22,7 +22,7 @@ const filterMenu = () => {
     if (option === '0') return mainMenu();
 
     return filterMenu();
-}
+};
 
 const groupMenu = () => {
     const option = buildMenu(messages.groupMessages);
@@ -31,7 +31,7 @@ const groupMenu = () => {
     if (option === '0') return mainMenu();
 
     return filterMenu();
-}
+};
 
-module.exports = { mainMenu }
+module.exports = { mainMenu };
 

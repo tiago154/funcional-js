@@ -5,4 +5,4 @@ module.exports = [
     '3 - Cor',
     '0 - Voltar\n',
     'Escolha uma opção\n'
-]
+];

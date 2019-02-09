@@ -14,7 +14,7 @@ const cityMenu = returnMenu => {
     if (reentryOption === 's') return cityMenu(returnMenu);
 
     return returnMenu();
-}
+};
 
 const countryMenu = returnMenu => {
     const option = buildMenu(messages.countryMessages);
@@ -28,7 +28,7 @@ const countryMenu = returnMenu => {
     if (reentryOption === 's') return countryMenu(returnMenu);
 
     return returnMenu();
-}
+};
 
 const colorMenu = returnMenu => {
     const option = buildMenu(messages.colorMessages);
@@ -42,6 +42,6 @@ const colorMenu = returnMenu => {
     if (reentryOption === 's') colorMenu(returnMenu);
 
     return returnMenu();
-}
+};
 
 module.exports = { colorMenu, countryMenu, cityMenu };

@@ -6,4 +6,4 @@ module.exports = {
     cityFilter,
     countryFilter,
     colorFilter
-}
+};

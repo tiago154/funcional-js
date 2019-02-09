@@ -4,4 +4,4 @@ module.exports = [
     '2 - Agrupar',
     '0 - Sair\n',
     'Escolha uma opção\n'
-]
+];

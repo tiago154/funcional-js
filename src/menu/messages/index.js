@@ -14,4 +14,4 @@ module.exports = {
     colorMessages,
     groupMessages,
     bandQuantityMessages
-}
+};

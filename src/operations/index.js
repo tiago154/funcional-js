@@ -12,12 +12,12 @@ const getInput = (type) => {
     if (type === 'Sort')
         return readLineSync.question('', { limit: ['c', 'd'], limitMessage: 'Digite [C/D]' });
     return '';
-}
+};
 const buildMenu = (messages, type = 'Prompt') => {
     console.clear();
     messages.map(printMessage);
     return getInput(type);
-}
+};
 
 const isEmptyOrIsNill = (isEmpty,isNil) => values => !(isEmpty(values) || isNil(values));
 const validateValues = isEmptyOrIsNill(R.isEmpty,R.isNil);
@@ -27,14 +27,14 @@ const printValues = values => validateValues(values) ?
     console.log('\nDados não localizados\n');
 
 const reentryMenu = (operation, menuName) => {
-    console.log(`Deseja Realizar uma nova pesquisa?\n`);
-    console.log(`'s' - SIM\n'n' - NÃO\n`);
+    console.log('Deseja Realizar uma nova pesquisa?\n');
+    console.log('\'S\' - SIM\n\'N\' - NÃO\n');
     console.log(`Operação: ${operation}`);
     console.log(`Menu: ${menuName}\n`);
-    optionUser = getInput('Reentry');
+    const optionUser = getInput('Reentry');
     console.clear();
     return optionUser;
-}
+};
 
 const getData = (functionOrigin, inputUser) => printValues(functionOrigin(data, inputUser));
 
@@ -44,4 +44,4 @@ module.exports = {
     buildMenu,
     printValues,
     reentryMenu
-}
+};
