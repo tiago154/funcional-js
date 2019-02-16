@@ -19,12 +19,12 @@ const buildMenu = (messages, type = 'Prompt') => {
     return getInput(type);
 };
 
-const isEmptyOrIsNill = (isEmpty,isNil) => values => !(isEmpty(values) || isNil(values));
-const validateValues = isEmptyOrIsNill(R.isEmpty,R.isNil);
+const isEmptyOrIsNill = (isEmpty, isNil) => values => (isEmpty(values) || isNil(values));
+const isInvalidValues = isEmptyOrIsNill(R.isEmpty, R.isNil);
 
-const printValues = values => validateValues(values) ?
-    console.log(`\n${JSON.stringify(values, null, 4)}\n`) :
-    console.log('\nDados não localizados\n');
+const printValues = values => isInvalidValues(values) ?
+    console.log('\nDados não localizados\n') :
+    console.log(`\n${JSON.stringify(values, null, 4)}\n`);
 
 const reentryMenu = (operation, menuName) => {
     console.log('Deseja Realizar uma nova pesquisa?\n');
