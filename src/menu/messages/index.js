@@ -33,22 +33,32 @@ const colorMessages = [
 const groupMessages = [
     'Agrupar por ...\n',
     '1 - Quantidade de bandas',
+    '2 - Quantidade de cores',
     '0 - Voltar\n',
     'Escolha uma opção\n'
 ];
 
 const bandQuantityMessages = [
     'Bandas - Menu\n',
-    'Digite qualquer tecla para continuar...',
+    '1 - Ordem crescente',
+    '2 - Ordem descrente',
+    '0 - para voltar\n'
+];
+
+const colorQuantityMessages = [
+    'Cores - Menu\n',
+    '1 - Ordem crescente',
+    '2 - Ordem descrente',
     '0 - para voltar\n'
 ];
 
 module.exports = {
+    bandQuantityMessages,
     cityMessages,
+    colorMessages,
+    colorQuantityMessages,
     countryMessages,
     filterMessages,
-    mainMessages,
-    colorMessages,
     groupMessages,
-    bandQuantityMessages
+    mainMessages
 };

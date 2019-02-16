@@ -36,12 +36,14 @@ const reentryMenu = (operation, menuName) => {
     return optionUser;
 };
 
-const getData = (functionOrigin, inputUser) => printValues(functionOrigin(data, inputUser));
+const getFilter = functionOrigin => (fieldName, inputUser) => printValues(functionOrigin(data, fieldName, inputUser));
+const getGroup = functionOrigin => (fieldName, desc) => printValues(functionOrigin(data, fieldName, desc));
 
 module.exports = {
-    getInput,
-    getData,
     buildMenu,
+    getFilter,
+    getGroup,
+    getInput,
     printValues,
     reentryMenu
 };

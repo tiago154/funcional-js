@@ -1,13 +1,16 @@
 const messages = require('../messages');
-const { buildMenu, reentryMenu, getData } = require('../../operations');
+const { buildMenu, reentryMenu, getFilter } = require('../../operations');
 const filters = require('../../filters');
+
+const resultByField = getFilter(filters.filterByField);
+
 
 const cityMenu = returnMenu => {
     const option = buildMenu(messages.cityMessages);
 
     if (option === '0') return returnMenu();
 
-    getData(filters.cityFilter, option);
+    resultByField('city', option);
 
     const reentryOption = reentryMenu('Filtro', 'Cidade');
 
@@ -21,7 +24,7 @@ const countryMenu = returnMenu => {
 
     if (option === '0') return returnMenu();
 
-    getData(filters.countryFilter, option);
+    resultByField('country', option);
 
     const reentryOption = reentryMenu('Filtro', 'País');
 
@@ -35,7 +38,7 @@ const colorMenu = returnMenu => {
 
     if (option === '0') return returnMenu();
 
-    getData(filters.colorFilter, option);
+    resultByField('favoriteColour', option);
 
     const reentryOption = reentryMenu('Filtro', 'Cor');
 
@@ -44,4 +47,4 @@ const colorMenu = returnMenu => {
     return returnMenu();
 };
 
-module.exports = { colorMenu, countryMenu, cityMenu };
+module.exports = { cityMenu, colorMenu, countryMenu };

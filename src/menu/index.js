@@ -28,9 +28,10 @@ const groupMenu = () => {
     const option = buildMenu(messages.groupMessages);
 
     if (option === '1') return groupOptions.bandQuantityMenu(groupMenu);
+    if (option === '2') return groupOptions.colorQuantityMenu(groupMenu);
     if (option === '0') return mainMenu();
 
-    return filterMenu();
+    return groupMenu();
 };
 
 module.exports = { mainMenu };

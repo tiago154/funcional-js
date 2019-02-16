@@ -1,9 +1,5 @@
-const cityFilter = require('./city');
-const countryFilter = require('./country');
-const colorFilter = require('./color');
+const filterData = (fieldName, inputUser) => item => item[fieldName].toLowerCase() === inputUser.toLowerCase();
 
-module.exports = {
-    cityFilter,
-    countryFilter,
-    colorFilter
-};
+const filterByField = (data, fieldName, inputUser) => data.filter(filterData(fieldName, inputUser));
+
+module.exports = { filterByField };
