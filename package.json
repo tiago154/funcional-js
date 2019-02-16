@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "lint": "eslint src",
-    "fix": "eslint src --fix"
+    "lint": "eslint -c .eslintrc.json src/",
+    "fix": "eslint -c .eslintrc.json  src/ --fix "
   },
   "author": "Tiago Santos Da Silva",
   "license": "ISC",
