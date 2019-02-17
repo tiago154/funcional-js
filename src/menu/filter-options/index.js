@@ -1,6 +1,8 @@
 const messages = require('../messages');
 const { buildMenu, reentryMenu, getFilter } = require('../../operations');
 const filters = require('../../filters');
+const reentry = require('./reentry-filter');
+const fieldNames = require('../field-names');
 
 const resultByField = getFilter(filters.filterByField);
 
@@ -10,9 +12,9 @@ const cityMenu = returnMenu => {
 
     if (option === '0') return returnMenu();
 
-    resultByField('city', option);
+    resultByField(fieldNames.city, option);
 
-    const reentryOption = reentryMenu('Filtro', 'Cidade');
+    const reentryOption = reentryMenu(reentry.city);
 
     if (reentryOption === 's') return cityMenu(returnMenu);
 
@@ -24,9 +26,9 @@ const countryMenu = returnMenu => {
 
     if (option === '0') return returnMenu();
 
-    resultByField('country', option);
+    resultByField(fieldNames.country, option);
 
-    const reentryOption = reentryMenu('Filtro', 'País');
+    const reentryOption = reentryMenu(reentry.country);
 
     if (reentryOption === 's') return countryMenu(returnMenu);
 
@@ -38,9 +40,9 @@ const colorMenu = returnMenu => {
 
     if (option === '0') return returnMenu();
 
-    resultByField('favoriteColour', option);
+    resultByField(fieldNames.color, option);
 
-    const reentryOption = reentryMenu('Filtro', 'Cor');
+    const reentryOption = reentryMenu(reentry.color);
 
     if (reentryOption === 's') colorMenu(returnMenu);
 

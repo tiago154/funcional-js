@@ -1,16 +1,15 @@
 const readLineSync = require('readline-sync');
 const data = require('../data/mock-data.json');
 const R = require('ramda');
+const colors = require('./colors-text');
 
 const printMessage = m => console.log(m);
 
 const getInput = (type) => {
     if (type === 'Reentry')
-        return readLineSync.question('', { limit: ['s', 'n'], limitMessage: 'Digite [S/N]' });
+        return readLineSync.question('', { limit: ['s', 'n'], limitMessage: colors.information('Digite [S/N]') });
     if (type === 'Prompt')
-        return readLineSync.prompt({ prompt: '=> ' });
-    if (type === 'Sort')
-        return readLineSync.question('', { limit: ['c', 'd'], limitMessage: 'Digite [C/D]' });
+        return readLineSync.prompt({ prompt: colors.prompt('=> ') });
     return '';
 };
 const buildMenu = (messages, type = 'Prompt') => {
@@ -23,14 +22,14 @@ const isEmptyOrIsNill = (isEmpty, isNil) => values => (isEmpty(values) || isNil(
 const isInvalidValues = isEmptyOrIsNill(R.isEmpty, R.isNil);
 
 const printValues = values => isInvalidValues(values) ?
-    console.log('\nDados não localizados\n') :
-    console.log(`\n${JSON.stringify(values, null, 4)}\n`);
+    console.log(colors.graceless('\nDados não localizados\n')) :
+    console.log(colors.result(`\n${JSON.stringify(values, null, 4)}\n`));
 
-const reentryMenu = (operation, menuName) => {
-    console.log('Deseja Realizar uma nova pesquisa?\n');
-    console.log('\'S\' - SIM\n\'N\' - NÃO\n');
-    console.log(`Operação: ${operation}`);
-    console.log(`Menu: ${menuName}\n`);
+const reentryMenu = ([operation, menuName]) => {
+    console.log(colors.prompt('Deseja Realizar uma nova pesquisa?\n'));
+    console.log(colors.option('\'S\' - SIM\n\'N\' - NÃO\n'));
+    console.log(colors.information(`Operação: ${operation}`));
+    console.log(colors.information(`Menu: ${menuName}\n`));
     const optionUser = getInput('Reentry');
     console.clear();
     return optionUser;

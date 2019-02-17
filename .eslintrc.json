@@ -42,6 +42,10 @@
             }
         ],
         "sort-keys": "error",
-        "sort-vars": "error"
-    }
+        "sort-vars": "error",
+        "sort-keys-fix/sort-keys-fix": 2
+    },
+    "plugins": [
+        "sort-keys-fix"
+    ]
 }
