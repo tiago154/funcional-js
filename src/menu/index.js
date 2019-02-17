@@ -2,12 +2,14 @@ const messages = require('./messages');
 const { buildMenu } = require('../operations');
 const filterOptions = require('./filter-options');
 const groupOptions = require('./group-options');
+const sumOptions = require('./sum-options');
 
 const mainMenu = () => {
     const option = buildMenu(messages.mainMessages);
 
     if (option === '1') return filterMenu();
     if (option === '2') return groupMenu();
+    if (option === '3') return sumMenu();
     if (option === '0') return process.exit('\nDesligando...'.gray);
 
     return mainMenu();
@@ -37,6 +39,15 @@ const groupMenu = () => {
     if (option === '0') return mainMenu();
 
     return groupMenu();
+};
+
+const sumMenu = () => {
+    const option = buildMenu(messages.sumMessages);
+
+    if (option === '1') return sumOptions.petsMenu(sumMenu);
+    if (option === '0') return mainMenu();
+
+    return sumMenu();
 };
 
 module.exports = { mainMenu };

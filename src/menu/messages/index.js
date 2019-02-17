@@ -1,5 +1,14 @@
 const colors = require('../../operations/colors-text');
 
+const mainMessages = [
+    colors.title('Programação Funcional - Menu\n'),
+    colors.option('1 - Filtro'),
+    colors.option('2 - Agrupar'),
+    colors.option('3 - Soma'),
+    colors.option('0 - Sair\n'),
+    colors.information('Escolha uma opção\n')
+];
+
 const filterMessages = [
     colors.title('Filtrar por ...\n'),
     colors.option('1 - Cidade'),
@@ -7,29 +16,6 @@ const filterMessages = [
     colors.option('3 - Cor'),
     colors.option('0 - Voltar\n'),
     colors.information('Escolha uma opção\n')
-];
-
-const mainMessages = [
-    colors.title('Programação Funcional - Menu\n'),
-    colors.option('1 - Filtro'),
-    colors.option('2 - Agrupar'),
-    colors.option('0 - Sair\n'),
-    colors.information('Escolha uma opção\n')
-];
-
-const cityMessages = [
-    colors.title('Filtrar Cidade - Menu\n'),
-    colors.information('Digite o nome da cidade ou 0 para voltar\n')
-];
-
-const countryMessages = [
-    colors.title('Filtrar País - Menu\n'),
-    colors.information('Digite o nome do país ou 0 para voltar\n')
-];
-
-const colorMessages = [
-    colors.title('Filtrar Cor - Menu\n'),
-    colors.information('Digite o nome da cor ou 0 para voltar\n')
 ];
 
 const groupMessages = [
@@ -43,6 +29,29 @@ const groupMessages = [
     colors.option('7 - País'),
     colors.option('0 - Voltar\n'),
     colors.information('Escolha uma opção\n')
+];
+
+const sumMessages = [
+    colors.title('Somar todos ...\n'),
+    colors.option('1 - Animais de estimação'),
+    colors.option('0 - Voltar\n'),
+    colors.information('Escolha uma opção\n')
+];
+
+// TODO Separar em arquivos
+const cityFilterMessages = [
+    colors.title('Filtrar Cidade - Menu\n'),
+    colors.information('Digite o nome da cidade ou 0 para voltar\n')
+];
+
+const countryFilterMessages = [
+    colors.title('Filtrar País - Menu\n'),
+    colors.information('Digite o nome do país ou 0 para voltar\n')
+];
+
+const colorFilterMessages = [
+    colors.title('Filtrar Cor - Menu\n'),
+    colors.information('Digite o nome da cor ou 0 para voltar\n')
 ];
 
 const bandGroupMessages = [
@@ -94,18 +103,33 @@ const countryGroupMessages = [
     colors.option('0 - para voltar\n')
 ];
 
+const petsSumMessages = [
+    colors.title('Somar todos os pets - Menu\n'),
+    colors.option('1 - Toda a base'),
+    colors.option('2 - Filtrando por um país'),
+    colors.option('0 - para voltar\n')
+];
+
+const petsSumCountryMessages = [
+    colors.title('Somar todos os pets por país - Menu\n'),
+    colors.information('Digite o nome do país ou 0 para voltar\n')
+];
+
 module.exports = {
     bandGroupMessages,
+    cityFilterMessages,
     cityGroupMessages,
-    cityMessages,
+    colorFilterMessages,
     colorGroupMessages,
-    colorMessages,
     companyGroupMessages,
+    countryFilterMessages,
     countryGroupMessages,
-    countryMessages,
     departmentGroupMessages,
     filterMessages,
     genderGroupMessages,
     groupMessages,
-    mainMessages
+    mainMessages,
+    petsSumCountryMessages,
+    petsSumMessages,
+    sumMessages
 };

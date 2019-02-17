@@ -35,14 +35,21 @@ const reentryMenu = ([operation, menuName]) => {
     return optionUser;
 };
 
-const getFilter = functionOrigin => (fieldName, inputUser) => printValues(functionOrigin(data, fieldName, inputUser));
-const getGroup = functionOrigin => (fieldName, desc) => printValues(functionOrigin(data, fieldName, desc));
+const getFilter = functionFilter => (filterField, inputUser) => printValues(functionFilter(data, filterField, inputUser));
+const getGroup = functionGroup => (groupField, desc) => printValues(functionGroup(data, groupField, desc));
+const getSumNoFilter = functionSum => sumField => printValues(functionSum(data, sumField));
+const getSumWithFilter = (functionSum, sumField, functionFilter) => (filterField, inputUser) => {
+    const filter = functionFilter(data, filterField, inputUser);
+    return printValues(functionSum(filter, sumField));
+};
 
 module.exports = {
     buildMenu,
     getFilter,
     getGroup,
     getInput,
+    getSumNoFilter,
+    getSumWithFilter,
     printValues,
     reentryMenu
 };
