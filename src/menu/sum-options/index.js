@@ -24,7 +24,7 @@ const petsMenu = returnMenu => {
 
     if (option === '2') return sumPetsByCountry(returnMenu);
 
-    return petsMenu();
+    return petsMenu(returnMenu);
 };
 
 const sumPetsByCountry = returnMenu => {
