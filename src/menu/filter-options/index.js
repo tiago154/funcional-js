@@ -8,7 +8,7 @@ const resultByField = getFilter(filters.filterByField);
 
 
 const cityMenu = returnMenu => {
-    const option = buildMenu(messages.cityMessages);
+    const option = buildMenu(messages.cityFilterMessages);
 
     if (option === '0') return returnMenu();
 
@@ -22,7 +22,7 @@ const cityMenu = returnMenu => {
 };
 
 const countryMenu = returnMenu => {
-    const option = buildMenu(messages.countryMessages);
+    const option = buildMenu(messages.countryFilterMessages);
 
     if (option === '0') return returnMenu();
 
@@ -36,7 +36,7 @@ const countryMenu = returnMenu => {
 };
 
 const colorMenu = returnMenu => {
-    const option = buildMenu(messages.colorMessages);
+    const option = buildMenu(messages.colorFilterMessages);
 
     if (option === '0') return returnMenu();
 
