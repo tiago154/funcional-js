@@ -1,5 +1,5 @@
 const messages = require('../messages');
-const { buildMenu, reentryMenu, getSumNoFilter, getSumWithFilter } = require('../../operations');
+const { buildMenu, reentryMenu, getSumNoFilter, getSumWithFilter } = require('../../operations/data-request');
 const sum = require('../../sum');
 const reentry = require('./reentry-sum');
 const fieldNames = require('../field-names');

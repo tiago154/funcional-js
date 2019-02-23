@@ -1,5 +1,5 @@
 const messages = require('../messages');
-const { buildMenu, reentryMenu, getFilter } = require('../../operations');
+const { buildMenu, reentryMenu, getFilter } = require('../../operations/data-request');
 const filters = require('../../filters');
 const reentry = require('./reentry-filter');
 const fieldNames = require('../field-names');

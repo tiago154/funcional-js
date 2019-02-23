@@ -1,10 +1,8 @@
 const messages = require('../messages');
-const { buildMenu, reentryMenu, getGroup } = require('../../operations');
-const groups = require('../../groups');
+const { showDataGroup } = require('../../operations/data-request');
 const fieldNames = require('../field-names');
 const reentry = require('./reentry-group');
 
-const resultByField = getGroup(groups.groupByField);
 
 const isDescOption = option => option === '2';
 

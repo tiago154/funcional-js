@@ -1,5 +1,5 @@
 const messages = require('./messages');
-const { buildMenu } = require('../operations');
+const { buildMenu } = require('../operations/data-request');
 const filterOptions = require('./filter-options');
 const groupOptions = require('./group-options');
 const sumOptions = require('./sum-options');
