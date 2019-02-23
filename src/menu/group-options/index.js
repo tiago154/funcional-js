@@ -1,5 +1,6 @@
 const messages = require('../messages');
 const { showDataGroup } = require('../../operations/data-request');
+const { buildMenu, reentryMenu } = require('../../operations/menu-helper');
 const fieldNames = require('../field-names');
 const reentry = require('./reentry-group');
 
@@ -7,11 +8,11 @@ const reentry = require('./reentry-group');
 const isDescOption = option => option === '2';
 
 const bandGroupMenu = (returnMenu) => {
-    const option = buildMenu(messages.bandGroupMessages);
+    const inputUser = buildMenu(messages.bandGroupMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.band, isDescOption(option));
+    showDataGroup(fieldNames.band, isDescOption(inputUser));
 
     const reentryOption = reentryMenu(reentry.band);
 
@@ -21,11 +22,11 @@ const bandGroupMenu = (returnMenu) => {
 };
 
 const colorGroupMenu = (returnMenu) => {
-    const option = buildMenu(messages.colorGroupMessages);
+    const inputUser = buildMenu(messages.colorGroupMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.color, isDescOption(option));
+    showDataGroup(fieldNames.color, isDescOption(inputUser));
 
     const reentryOption = reentryMenu(reentry.color);
 
@@ -35,11 +36,11 @@ const colorGroupMenu = (returnMenu) => {
 };
 
 const companyGroupMenu = (returnMenu) => {
-    const option = buildMenu(messages.companyGroupMessages);
+    const inputUser = buildMenu(messages.companyGroupMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.company, isDescOption(option));
+    showDataGroup(fieldNames.company, isDescOption(inputUser));
 
     const reentryOption = reentryMenu(reentry.company);
 
@@ -49,11 +50,11 @@ const companyGroupMenu = (returnMenu) => {
 };
 
 const departmentGroupMenu = (returnMenu) => {
-    const option = buildMenu(messages.departmentGroupMessages);
+    const inputUser = buildMenu(messages.departmentGroupMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.department, isDescOption(option));
+    showDataGroup(fieldNames.department, isDescOption(inputUser));
 
     const reentryOption = reentryMenu(reentry.department);
 
@@ -63,11 +64,11 @@ const departmentGroupMenu = (returnMenu) => {
 };
 
 const genderGroupMenu = (returnMenu) => {
-    const option = buildMenu(messages.genderGroupMessages);
+    const inputUser = buildMenu(messages.genderGroupMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.gender, isDescOption(option));
+    showDataGroup(fieldNames.gender, isDescOption(inputUser));
 
     const reentryOption = reentryMenu(reentry.gender);
 
@@ -77,11 +78,11 @@ const genderGroupMenu = (returnMenu) => {
 };
 
 const cityGroupMenu = (returnMenu) => {
-    const option = buildMenu(messages.cityGroupMessages);
+    const inputUser = buildMenu(messages.cityGroupMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.city, isDescOption(option));
+    showDataGroup(fieldNames.city, isDescOption(inputUser));
 
     const reentryOption = reentryMenu(reentry.city);
 
@@ -91,11 +92,11 @@ const cityGroupMenu = (returnMenu) => {
 };
 
 const countryGroupMenu = (returnMenu) => {
-    const option = buildMenu(messages.countryGroupMessages);
+    const inputUser = buildMenu(messages.countryGroupMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.country, isDescOption(option));
+    showDataGroup(fieldNames.country, isDescOption(inputUser));
 
     const reentryOption = reentryMenu(reentry.country);
 

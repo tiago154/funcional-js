@@ -11,7 +11,13 @@ const buildMenu = (messages, type = 'Prompt') => {
 
 const getInput = (type) => {
     if (type === 'Reentry')
-        return readLineSync.question('', { limit: ['s', 'n'], limitMessage: colors.information('Digite [S/N]') });
+        return readLineSync.question(
+            '',
+            {
+                limit: ['s', 'n', 'S', 'N'],
+                limitMessage: colors.information('Digite [S/N]')
+            }
+        );
     if (type === 'Prompt')
         return readLineSync.prompt({ prompt: colors.prompt('=> ') });
     return '';

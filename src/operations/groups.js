@@ -1,7 +1,8 @@
 const database = require('../data/mock-data.json');
 
 // eslint-disable-next-line no-unused-vars
-const getUniqueFields = (fieldName, list) => [...new Set(list.map(item => item[fieldName]))];
+const getUniqueFields = (fieldName, list) =>
+    [...new Set(list.map(item => item[fieldName]))];
 
 const sortDesc = (fieldName, a, b) => {
     if (b[fieldName] < a[fieldName])
@@ -25,8 +26,9 @@ const compareSort = (fieldName, desc) => (a, b) =>
 const countBy = (fieldName, list) => {
     let object = {};
 
-    list.forEach((item) =>
-        item[fieldName] in object ? ++object[item[fieldName]] : object[item[fieldName]] = 1);
+    list.forEach((item) => item[fieldName] in object ?
+        ++object[item[fieldName]] :
+        object[item[fieldName]] = 1);
 
     return object;
 };

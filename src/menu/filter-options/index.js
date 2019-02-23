@@ -1,18 +1,15 @@
 const messages = require('../messages');
-const { buildMenu, reentryMenu, getFilter } = require('../../operations/data-request');
-const filters = require('../../filters');
+const { showDatafiltered } = require('../../operations/data-request');
+const { buildMenu, reentryMenu } = require('../../operations/menu-helper');
 const reentry = require('./reentry-filter');
 const fieldNames = require('../field-names');
 
-const resultByField = getFilter(filters.filterByField);
-
-
 const cityMenu = returnMenu => {
-    const option = buildMenu(messages.cityFilterMessages);
+    const inputUser = buildMenu(messages.cityFilterMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.city, option);
+    showDatafiltered(fieldNames.city, inputUser);
 
     const reentryOption = reentryMenu(reentry.city);
 
@@ -22,11 +19,11 @@ const cityMenu = returnMenu => {
 };
 
 const countryMenu = returnMenu => {
-    const option = buildMenu(messages.countryFilterMessages);
+    const inputUser = buildMenu(messages.countryFilterMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.country, option);
+    showDatafiltered(fieldNames.country, inputUser);
 
     const reentryOption = reentryMenu(reentry.country);
 
@@ -36,11 +33,11 @@ const countryMenu = returnMenu => {
 };
 
 const colorMenu = returnMenu => {
-    const option = buildMenu(messages.colorFilterMessages);
+    const inputUser = buildMenu(messages.colorFilterMessages);
 
-    if (option === '0') return returnMenu();
+    if (inputUser === '0') return returnMenu();
 
-    resultByField(fieldNames.color, option);
+    showDatafiltered(fieldNames.color, inputUser);
 
     const reentryOption = reentryMenu(reentry.color);
 
