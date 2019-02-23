@@ -23,18 +23,22 @@ const getInput = (type) => {
     return '';
 };
 
-const reentryMenu = ([operation, menuName]) => {
+const reentryMenuOption = ([operation, menuName]) => {
     console.log(colors.prompt('Deseja Realizar uma nova pesquisa?\n'));
     console.log(colors.option('\'S\' - SIM\n\'N\' - NÃO\n'));
     console.log(colors.information(`Operação: ${operation}`));
     console.log(colors.information(`Menu: ${menuName}\n`));
     const optionUser = getInput('Reentry');
     console.clear();
-    return optionUser;
+    return optionUser.toLowerCase();
 };
+
+const isReturnOption = inputUser => inputUser === '0';
+
+const isReentryOption = reentryMenu => reentryMenuOption(reentryMenu) === 's';
 
 module.exports = {
     buildMenu,
-    getInput,
-    reentryMenu
+    isReentryOption,
+    isReturnOption
 };

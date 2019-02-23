@@ -1,20 +1,21 @@
 const messages = require('../messages');
 const { showSumNoFilter, showSumWithFilter } = require('../../operations/data-request');
-const { buildMenu, reentryMenu } = require('../../operations/menu-helper');
+const menuHelper = require('../../operations/menu-helper');
 const reentry = require('./reentry-sum');
 const fieldNames = require('../field-names');
+const buildMenu = menuHelper.buildMenu;
+const isReentryOption = menuHelper.isReentryOption;
+const isReturnOption = menuHelper.isReturnOption;
 
 
 const petsMenu = returnMenu => {
     const inputUser = buildMenu(messages.petsSumMessages);
 
-    if (inputUser === '0') return returnMenu();
+    if (isReturnOption(inputUser)) return returnMenu();
     if (inputUser === '1') {
         showSumNoFilter(fieldNames.pets);
 
-        const reentryOption = reentryMenu(reentry.pets);
-
-        if (reentryOption === 's') return petsMenu(returnMenu);
+        if (isReentryOption(reentry.pets)) return petsMenu(returnMenu);
 
         return returnMenu();
     }
@@ -27,13 +28,11 @@ const petsMenu = returnMenu => {
 const sumPetsByCountry = returnMenu => {
     const inputUser = buildMenu(messages.petsSumCountryMessages);
 
-    if (inputUser === '0') return petsMenu(returnMenu);
+    if (isReturnOption(inputUser)) return petsMenu(returnMenu);
 
     showSumWithFilter(fieldNames.pets, fieldNames.country, inputUser);
 
-    const reentryOption = reentryMenu(reentry.pets);
-
-    if (reentryOption === 's') return sumPetsByCountry(returnMenu);
+    if (isReentryOption(reentry.pets)) return sumPetsByCountry(returnMenu);
 
     return petsMenu(returnMenu);
 };

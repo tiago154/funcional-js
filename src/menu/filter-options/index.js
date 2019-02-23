@@ -1,19 +1,20 @@
 const messages = require('../messages');
 const { showDatafiltered } = require('../../operations/data-request');
-const { buildMenu, reentryMenu } = require('../../operations/menu-helper');
+const menuHelper = require('../../operations/menu-helper');
 const reentry = require('./reentry-filter');
 const fieldNames = require('../field-names');
+const buildMenu = menuHelper.buildMenu;
+const isReentryOption = menuHelper.isReentryOption;
+const isReturnOption = menuHelper.isReturnOption;
 
 const cityMenu = returnMenu => {
     const inputUser = buildMenu(messages.cityFilterMessages);
 
-    if (inputUser === '0') return returnMenu();
+    if (isReturnOption(inputUser)) return returnMenu();
 
     showDatafiltered(fieldNames.city, inputUser);
 
-    const reentryOption = reentryMenu(reentry.city);
-
-    if (reentryOption === 's') return cityMenu(returnMenu);
+    if (isReentryOption(reentry.city)) return cityMenu(returnMenu);
 
     return returnMenu();
 };
@@ -21,13 +22,11 @@ const cityMenu = returnMenu => {
 const countryMenu = returnMenu => {
     const inputUser = buildMenu(messages.countryFilterMessages);
 
-    if (inputUser === '0') return returnMenu();
+    if (isReturnOption(inputUser)) return returnMenu();
 
     showDatafiltered(fieldNames.country, inputUser);
 
-    const reentryOption = reentryMenu(reentry.country);
-
-    if (reentryOption === 's') return countryMenu(returnMenu);
+    if (isReentryOption(reentry.country)) return countryMenu(returnMenu);
 
     return returnMenu();
 };
@@ -35,13 +34,11 @@ const countryMenu = returnMenu => {
 const colorMenu = returnMenu => {
     const inputUser = buildMenu(messages.colorFilterMessages);
 
-    if (inputUser === '0') return returnMenu();
+    if (isReturnOption(inputUser)) return returnMenu();
 
     showDatafiltered(fieldNames.color, inputUser);
 
-    const reentryOption = reentryMenu(reentry.color);
-
-    if (reentryOption === 's') colorMenu(returnMenu);
+    if (isReentryOption(reentry.color)) colorMenu(returnMenu);
 
     return returnMenu();
 };

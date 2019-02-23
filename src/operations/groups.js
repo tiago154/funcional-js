@@ -23,14 +23,14 @@ const sortAsc = (fieldName, a, b) => {
 const compareSort = (fieldName, desc) => (a, b) =>
     desc ? sortDesc(fieldName, a, b) : sortAsc(fieldName, a, b);
 
-const countBy = (fieldName, list) => list.reduce((prev, curr) => {
+const countByField = (fieldName, list) => list.reduce((prev, curr) => {
     curr[fieldName] in prev ? prev[curr[fieldName]]++ : prev[curr[fieldName]] = 1;
     return prev;
 }, {});
 
 const byField = (fieldName, desc) => {
     const orderedData = database.sort(compareSort(fieldName, desc));
-    return countBy(fieldName, orderedData);
+    return countByField(fieldName, orderedData);
 };
 
 module.exports = { byField };
