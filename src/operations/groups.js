@@ -23,15 +23,10 @@ const sortAsc = (fieldName, a, b) => {
 const compareSort = (fieldName, desc) => (a, b) =>
     desc ? sortDesc(fieldName, a, b) : sortAsc(fieldName, a, b);
 
-const countBy = (fieldName, list) => {
-    let object = {};
-
-    list.forEach((item) => item[fieldName] in object ?
-        ++object[item[fieldName]] :
-        object[item[fieldName]] = 1);
-
-    return object;
-};
+const countBy = (fieldName, list) => list.reduce((prev, curr) => {
+    curr[fieldName] in prev ? prev[curr[fieldName]]++ : prev[curr[fieldName]] = 1;
+    return prev;
+}, {});
 
 const byField = (fieldName, desc) => {
     const orderedData = database.sort(compareSort(fieldName, desc));
