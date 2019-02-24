@@ -1,0 +1,19 @@
+{
+    "coverageReporters": [
+        "json"
+    ],
+    "coverageDirectory": "coverage/unit",
+    "collectCoverageFrom": [
+        "src/**/*.{js,ssx}"
+    ],
+    "testRegex": "/__tests__/unit/.*\\.(test)\\.(jsx?)$",
+    "moduleFileExtensions": [
+        "js"
+    ],
+    "testPathIgnorePatterns": [
+        "<rootDir>/node_modules/"
+    ],
+    "modulePaths": [
+        "<rootDir>/src/"
+    ]
+}
