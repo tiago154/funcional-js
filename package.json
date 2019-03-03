@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "coverage": "istanbul report json html text",
-    "test-unit": "jest --config unit-jest.config.json --coverage --runInBand",
+    "test-unit": "jest --config unit-jest.config.json --coverage --runInBand --silent --detectOpenHandles",
+    "test": "rimraf ./coverage && npm run test-unit && npm run coverage",
     "lint": "eslint -c .eslintrc.json src/",
     "fix": "eslint -c .eslintrc.json  src/ --fix "
   },
@@ -22,6 +23,9 @@
     "eslint-plugin-sort-keys-fix": "^1.0.1",
     "istanbul": "^0.4.5",
     "jest": "^24.1.0",
+    "node-key-sender": "^1.0.11",
+    "rimraf": "^2.6.3",
+    "robotjs": "^0.5.1",
     "sinon": "^7.2.4"
   }
 }
