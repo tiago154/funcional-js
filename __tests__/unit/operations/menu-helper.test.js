@@ -1,5 +1,5 @@
 const menuHelper = require('../../../src/operations/menu-helper');
-const keySender = require('node-key-sender');
+const keySender = require('robotjs');
 
 describe('Operations -> Menu Helper', () => {
     describe('isReturnOption', () => {
@@ -17,16 +17,16 @@ describe('Operations -> Menu Helper', () => {
         });
     });
 
-    describe('isReentryOption', () => {
+    describe.only('isReentryOption', () => {
         it('Should return true if the input is s', () => {
-            keySender.sendText('s');
-            keySender.sendKey('enter');
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
             const returnOption = menuHelper.isReentryOption(['test', 'test']);
             expect(returnOption).toEqual(true);
         });
         it('Should return false if the input is n', () => {
-            keySender.sendText('n');
-            keySender.sendKey('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
             const returnOption = menuHelper.isReentryOption(['test', 'test']);
             expect(returnOption).toEqual(false);
         });
