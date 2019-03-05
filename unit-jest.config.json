@@ -1,6 +1,8 @@
 {
+    "collectCoverage": true,
     "coverageReporters": [
-        "json"
+        "json",
+        "html"
     ],
     "coverageDirectory": "coverage/unit",
     "collectCoverageFrom": [

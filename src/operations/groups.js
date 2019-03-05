@@ -24,6 +24,7 @@ const compareSort = (fieldName, desc) => (a, b) =>
     desc ? sortDesc(fieldName, a, b) : sortAsc(fieldName, a, b);
 
 const countByField = (fieldName, list) => list.reduce((prev, curr) => {
+    if (!curr[fieldName]) return {};
     curr[fieldName] in prev ? prev[curr[fieldName]]++ : prev[curr[fieldName]] = 1;
     return prev;
 }, {});

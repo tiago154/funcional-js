@@ -5,11 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "coverage": "istanbul report json html text",
-    "test-unit": "jest --config unit-jest.config.json --coverage --runInBand --silent --detectOpenHandles",
-    "test": "rimraf ./coverage && npm run test-unit && npm run coverage",
+    "report-coverage": "istanbul report json html text",
+    "test-unit": "jest --config unit-jest.config.json --runInBand --silent --detectOpenHandles --coverage",
+    "test": "rimraf ./coverage && npm run test-unit && npm run report-coverage",
     "lint": "eslint -c .eslintrc.json src/",
-    "fix": "eslint -c .eslintrc.json  src/ --fix "
+    "fix": "eslint -c .eslintrc.json src/ --fix "
   },
   "author": "Tiago Santos Da Silva",
   "license": "ISC",
@@ -23,7 +23,6 @@
     "eslint-plugin-sort-keys-fix": "^1.0.1",
     "istanbul": "^0.4.5",
     "jest": "^24.1.0",
-    "node-key-sender": "^1.0.11",
     "rimraf": "^2.6.3",
     "robotjs": "^0.5.1",
     "sinon": "^7.2.4"

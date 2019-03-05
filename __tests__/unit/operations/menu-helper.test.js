@@ -17,7 +17,7 @@ describe('Operations -> Menu Helper', () => {
         });
     });
 
-    describe.only('isReentryOption', () => {
+    describe('isReentryOption', () => {
         it('Should return true if the input is s', () => {
             keySender.keyTap('s');
             keySender.keyTap('enter');
@@ -29,6 +29,25 @@ describe('Operations -> Menu Helper', () => {
             keySender.keyTap('enter');
             const returnOption = menuHelper.isReentryOption(['test', 'test']);
             expect(returnOption).toEqual(false);
+        });
+    });
+
+    describe('buildMenu', () => {
+        it('Should return same typed text', () => {
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            const returnOption = menuHelper.buildMenu(['test', 'test']);
+            expect(returnOption).toEqual('s');
+        });
+        it('Should return same typed text with option Reentry', () => {
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            const returnOption = menuHelper.buildMenu(['test', 'test'], 'Reentry');
+            expect(returnOption).toEqual('s');
+        });
+        it('Should return a blank text if the type option is different than expected', () => {
+            const returnOption = menuHelper.buildMenu(['test', 'test'], 'test');
+            expect(returnOption).toEqual('');
         });
     });
 });
