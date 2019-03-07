@@ -89,7 +89,7 @@ const countryGroupMenu = (returnMenu) => {
 
     showDataGroup(fieldNames.country, isDescOption(inputUser));
 
-    if (reentry.city(reentry.country)) return countryGroupMenu(returnMenu);
+    if (isReentryOption(reentry.country)) return countryGroupMenu(returnMenu);
 
     return returnMenu();
 };

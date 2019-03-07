@@ -5,5 +5,13 @@ describe('Menu -> Filter Options -> Reentry Filter', () => {
         it('Should city valid array', () => {
             expect(reentryFilter.city).toEqual(["Filtro", "Cidade"]);
         });
+
+        it('Should color valid array', () => {
+            expect(reentryFilter.color).toEqual(["Filtro", "Cor"]);
+        });
+
+        it('Should country valid array', () => {
+            expect(reentryFilter.country).toEqual(["Filtro", "País"]);
+        });
     });
 });

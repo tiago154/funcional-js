@@ -5,14 +5,14 @@ const menuReturnMock = () => 'teste';
 
 describe('Menu -> Sum Options -> Index', () => {
     describe('Menu Pets', () => {
-        it('Should return the function passed by parameter, when the option is 0', () => {
+        it('Should go through the output stream when we enter the zero', () => {
             keySender.keyTap('0');
             keySender.keyTap('enter');
             const result = sumOptions.petsMenu(menuReturnMock);
             expect(result).toEqual('teste');
         });
 
-        it('Toda a base', () => {
+        it('Should go through the base and leave the menu', () => {
             keySender.keyTap('1');
             keySender.keyTap('enter');
             keySender.keyTap('n');
@@ -21,7 +21,7 @@ describe('Menu -> Sum Options -> Index', () => {
             expect(result).toEqual('teste');
         });
 
-        it('Toda a base', () => {
+        it('Should go through the base, re-enter the menu and then leave', () => {
             keySender.keyTap('1');
             keySender.keyTap('enter');
             keySender.keyTap('s');
@@ -32,7 +32,7 @@ describe('Menu -> Sum Options -> Index', () => {
             expect(result).toEqual('teste');
         });
 
-        it('Por Pais', () => {
+        it('Should filter the data by country, re-enter the menu and then exit', () => {
             keySender.keyTap('2');
             keySender.keyTap('enter');
             keySender.typeString('brazil');
@@ -47,7 +47,7 @@ describe('Menu -> Sum Options -> Index', () => {
             expect(result).toEqual('teste');
         });
 
-        it('Por Pais', () => {
+        it('Should filter the data by country and then exit', () => {
             keySender.keyTap('2');
             keySender.keyTap('enter');
             keySender.typeString('brazil');
@@ -60,7 +60,7 @@ describe('Menu -> Sum Options -> Index', () => {
             expect(result).toEqual('teste');
         });
 
-        it('Opção Invalida', () => {
+        it('Should put an invalid option and then leave the menu', () => {
             keySender.keyTap('3');
             keySender.keyTap('enter');
             keySender.keyTap('0');

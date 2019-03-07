@@ -3,16 +3,16 @@ const keySender = require('robotjs');
 
 const menuReturnMock = () => 'teste';
 
-describe('Menu -> Sum Options -> Index', () => {
+describe('Menu -> Filter Options -> Index', () => {
     describe('Menu Bandas', () => {
-        it('Should return the function passed by parameter, when the option is 0', () => {
+        it('Should go through the output stream when we enter the zero', () => {
             keySender.keyTap('0');
             keySender.keyTap('enter');
             const result = filterOptions.cityMenu(menuReturnMock);
             expect(result).toEqual('teste');
         });
 
-        it('Should return the function passed by parameter, when the option is 0', () => {
+        it('Should put an invalid option and then exit the menu', () => {
             keySender.keyTap('9');
             keySender.keyTap('enter');
             keySender.keyTap('n');
@@ -23,8 +23,17 @@ describe('Menu -> Sum Options -> Index', () => {
     });
 
     describe('Menu Cores', () => {
-        it('Should return the function passed by parameter, when the option is 0', () => {
+        it('Should go through the output stream when we enter the zero', () => {
             keySender.keyTap('0');
+            keySender.keyTap('enter');
+            const result = filterOptions.colorMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put an invalid option and then exit the menu', () => {
+            keySender.keyTap('9');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
             keySender.keyTap('enter');
             const result = filterOptions.colorMenu(menuReturnMock);
             expect(result).toEqual('teste');
@@ -32,8 +41,17 @@ describe('Menu -> Sum Options -> Index', () => {
     });
 
     describe('Menu Cores', () => {
-        it('Should return the function passed by parameter, when the option is 0', () => {
+        it('Should go through the output stream when we enter the zero', () => {
             keySender.keyTap('0');
+            keySender.keyTap('enter');
+            const result = filterOptions.countryMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put an invalid option and then exit the menu', () => {
+            keySender.keyTap('9');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
             keySender.keyTap('enter');
             const result = filterOptions.countryMenu(menuReturnMock);
             expect(result).toEqual('teste');
