@@ -20,6 +20,28 @@ describe('Menu -> Groups Options -> Index', () => {
             const result = groupOptions.bandGroupMenu(menuReturnMock);
             expect(result).toEqual('teste');
         });
+
+        it('Should put decreasing option and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.bandGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and re-entry menu and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.bandGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
     });
 
     describe('Menu Cidade', () => {
@@ -32,6 +54,28 @@ describe('Menu -> Groups Options -> Index', () => {
 
         it('Should put an invalid option and then exit the menu', () => {
             keySender.keyTap('9');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.cityGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.cityGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and re-entry menu and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            keySender.keyTap('2');
             keySender.keyTap('enter');
             keySender.keyTap('n');
             keySender.keyTap('enter');
@@ -56,6 +100,28 @@ describe('Menu -> Groups Options -> Index', () => {
             const result = groupOptions.colorGroupMenu(menuReturnMock);
             expect(result).toEqual('teste');
         });
+
+        it('Should put decreasing option and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.colorGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and re-entry menu and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.colorGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
     });
 
     describe('Menu Empresas', () => {
@@ -68,6 +134,28 @@ describe('Menu -> Groups Options -> Index', () => {
 
         it('Should put an invalid option and then exit the menu', () => {
             keySender.keyTap('9');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.companyGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.companyGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and re-entry menu and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            keySender.keyTap('2');
             keySender.keyTap('enter');
             keySender.keyTap('n');
             keySender.keyTap('enter');
@@ -92,6 +180,28 @@ describe('Menu -> Groups Options -> Index', () => {
             const result = groupOptions.countryGroupMenu(menuReturnMock);
             expect(result).toEqual('teste');
         });
+
+        it('Should put decreasing option and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.countryGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and re-entry menu and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.countryGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
     });
 
     describe('Menu Setores', () => {
@@ -110,6 +220,28 @@ describe('Menu -> Groups Options -> Index', () => {
             const result = groupOptions.departmentGroupMenu(menuReturnMock);
             expect(result).toEqual('teste');
         });
+
+        it('Should put decreasing option and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.departmentGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and re-entry menu and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.departmentGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
     });
 
     describe('Menu Genero', () => {
@@ -122,6 +254,28 @@ describe('Menu -> Groups Options -> Index', () => {
 
         it('Should put an invalid option and then exit the menu', () => {
             keySender.keyTap('9');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.genderGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('n');
+            keySender.keyTap('enter');
+            const result = groupOptions.genderGroupMenu(menuReturnMock);
+            expect(result).toEqual('teste');
+        });
+
+        it('Should put decreasing option and re-entry menu and then exit the menu', () => {
+            keySender.keyTap('2');
+            keySender.keyTap('enter');
+            keySender.keyTap('s');
+            keySender.keyTap('enter');
+            keySender.keyTap('2');
             keySender.keyTap('enter');
             keySender.keyTap('n');
             keySender.keyTap('enter');

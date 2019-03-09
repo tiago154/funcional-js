@@ -7,4 +7,4 @@ const print = values => isEmptyOrIsNill(values) ?
     console.log(colors.graceless('\nDados não localizados\n')) :
     console.log(colors.result(`\n${JSON.stringify(values, null, 4)}\n`));
 
-module.exports = { print }
+module.exports = { print };

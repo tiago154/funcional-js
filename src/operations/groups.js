@@ -1,8 +1,7 @@
 const database = require('../data/mock-data.json');
 
-// eslint-disable-next-line no-unused-vars
-const getUniqueFields = (fieldName, list) =>
-    [...new Set(list.map(item => item[fieldName]))];
+// const getUniqueFields = (fieldName, list) =>
+//     [...new Set(list.map(item => item[fieldName]))];
 
 const sortDesc = (fieldName, a, b) => {
     if (b[fieldName] < a[fieldName])
