@@ -1,7 +1,3 @@
-const { mainMenu } = require('./menu');
+const initMenu = require('./init');
 
-process.on('exit', (message) => console.info(message));
-
-const init = () => mainMenu();
-
-init();
+initMenu.start();
