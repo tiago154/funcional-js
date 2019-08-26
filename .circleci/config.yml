@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.5-stretch
+
+    steps:
+      - checkout
+
+      - run: sudo apt-get install libxtst-dev libpng++-dev build-essential
+
+      - run:
+          name: instalar pacotes
+          command: npm i
+
+      - run:
+          name: lint
+          command: npm run lint
+
+      - run:
+          name: testes
+          command: npm run test-unit-ci

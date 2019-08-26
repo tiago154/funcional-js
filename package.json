@@ -6,7 +6,12 @@
   "scripts": {
     "start": "node src/index.js",
     "report-coverage": "istanbul report json html text",
+<<<<<<< HEAD
     "test-unit": "jest --config unit-jest.config.json --runInBand --silent --detectOpenHandles --coverage",
+=======
+    "test-unit": "node node_modules/jest/bin/jest.js --config unit-jest.config.json --runInBand",
+    "test-unit-ci": "node node_modules/jest/bin/jest.js --config unit-jest.config.json --runInBand __tests__/unit/menu/group-options/reentry-group.test.js",
+>>>>>>> 424225b... Teste Circleci
     "test": "rimraf ./coverage && npm run test-unit && npm run report-coverage",
     "lint": "eslint -c .eslintrc.json src/",
     "fix": "eslint -c .eslintrc.json src/ --fix "
