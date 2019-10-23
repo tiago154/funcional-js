@@ -21,6 +21,10 @@ jobs:
           name: testes
           command: npm run test-unit-ci
 
+      - add_ssh_keys:
+          fingerprints:
+            - "db:ad:39:40:49:f2:20:e0:a8:73:47:15:c5:d1:86:b4"
+
       - run:
           name: Release tag
           command: |
