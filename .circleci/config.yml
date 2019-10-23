@@ -20,3 +20,11 @@ jobs:
       - run:
           name: testes
           command: npm run test-unit-ci
+
+      - run:
+          name: Release tag
+          command: |
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            echo $(echo ${CIRCLE_SHA1} | cut -c -7) > last_tag
+            git tag $(echo ${CIRCLE_SHA1} | cut -c -7)
+            git push origin $(echo ${CIRCLE_SHA1} | cut -c -7)
